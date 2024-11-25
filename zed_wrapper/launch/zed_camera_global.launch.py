@@ -1,16 +1,4 @@
-# Copyright 2024 Stereolabs
-#
-# Licensed under the Apache License, Version 2.0 (the 'License');
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-#
-#     http://www.apache.org/licenses/LICENSE-2.0
-#
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an 'AS IS' BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
+# 글로벌 코스트맵 따기 위한 카메라 런치
 
 import os
 import sys
@@ -36,7 +24,7 @@ from launch_ros.actions import Node
 default_config_common = os.path.join(
     get_package_share_directory('zed_wrapper'),
     'config',
-    'common.yaml'
+    'common_global.yaml'
 )
 
 # URDF/xacro file to be loaded by the Robot State Publisher node
@@ -235,12 +223,12 @@ def generate_launch_description():
                 choices=['true', 'false']),
             DeclareLaunchArgument(
                 'publish_tf',
-                default_value='false',
+                default_value='true',
                 description='Enable publication of the `odom -> camera_link` TF.',
                 choices=['true', 'false']),
             DeclareLaunchArgument(
                 'publish_map_tf',
-                default_value='false',
+                default_value='true',
                 description='Enable publication of the `map -> odom` TF. Note: Ignored if `publish_tf` is False.',
                 choices=['true', 'false']),
             DeclareLaunchArgument(

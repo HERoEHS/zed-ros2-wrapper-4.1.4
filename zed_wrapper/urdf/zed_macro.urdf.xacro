@@ -87,6 +87,14 @@
     <!-- Camera mounting point (the threaded screw hole in the bottom) -->
     <link name="${name}_camera_link" />
     
+
+    <!-- <link name="${name}_robot_base" />
+    <joint name="${name}_robot_base_joint" type="fixed">
+      <parent link="${name}_camera_link"/>
+      <child link="${name}_robot_base"/>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </joint> -->
+    
     <!-- Camera Center -->
     <link name="${name}_camera_center">
       <xacro:unless value="${model == 'virtual'}">
