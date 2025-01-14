@@ -13,7 +13,7 @@
 
         svo:
             svo_loop: false # Enable loop mode when using an SVO as input source
-            svo_realtime: true # if true the SVO will be played trying to respect the original framerate eventually skipping frames, otherwise every frame will be processed respecting the `pub_frame_rate` setting
+            svo_realtime: false # if true the SVO will be played trying to respect the original framerate eventually skipping frames, otherwise every frame will be processed respecting the `pub_frame_rate` setting
 
         general:
             camera_timeout_sec: 5
@@ -69,7 +69,7 @@
         pos_tracking:
             pos_tracking_enabled: false # True to enable positional tracking from start
             pos_tracking_mode: "GEN_2" # Matches the ZED SDK setting: 'GEN_1', 'GEN_2'
-            imu_fusion: true # enable/disable IMU fusion. When set to false, only the optical odometry will be used.
+            imu_fusion: false # enable/disable IMU fusion. When set to false, only the optical odometry will be used.
             publish_tf: false # [usually overwritten by launch file] publish `odom -> camera_link` TF
             publish_map_tf: false # [usually overwritten by launch file] publish `map -> odom` TF
             map_frame: "map"
